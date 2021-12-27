@@ -1,4 +1,4 @@
-package array
+package main
 
 func buildArray(nums []int) []int {
 	result := make([]int, len(nums))
