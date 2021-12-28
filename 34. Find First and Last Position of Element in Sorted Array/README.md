@@ -1,4 +1,4 @@
-[34. Find First and Last Position of Element in Sorted Array]()
+[34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/)
 
 `二分法` `数组`
 
@@ -7,3 +7,8 @@
 
 犯错点：
 1. 找到边界后，忘记 break
+
+变形：  
+《剑指 offer》 53 题  
+在排序数组中，找到一个数字出现的次数，同理找出左右边界即可。  
+另外，书中衍生的题目二、题目三也值得看一下（P266）
