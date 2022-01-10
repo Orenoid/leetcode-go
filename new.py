@@ -2,12 +2,13 @@ import sys
 import click
 from typing import List
 
+
 @click.command()
-@click.option('--tags', '-t', help='题目标签，支持多个，使用英文逗号分隔')
-@click.argument('title')
+@click.option("--tags", "-t", help="题目标签，支持多个，使用英文逗号分隔")
+@click.argument("title")
 def main(title, tags):
     if tags:
-        tags = tags.split(',')
+        tags = tags.split(",")
     else:
         tags = []
 
@@ -23,7 +24,7 @@ def create_directory_with_given_name(name: str, tags: List[str]):
         content = f"# [{name}]()\n"
         if len(tags) > 0:
             content += "\n\n"
-            content += ' '.join(f'`{tag}`' for tag in tags)
+            content += " ".join(f"`{tag}`" for tag in tags)
         f.write(content)
 
     # create a go file with the same name inside the directory
