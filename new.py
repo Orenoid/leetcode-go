@@ -20,7 +20,7 @@ def create_directory_with_given_name(name: str, tags: List[str]):
 
     os.mkdir(name)
     # create a markdown file with the same name inside the directory
-    with open(name + "/" + name + ".md", "w") as f:
+    with open(name + "/" + name + ".md", "w", encoding='utf8') as f:
         content = f"# [{name}]()\n"
         if len(tags) > 0:
             content += "\n\n"
