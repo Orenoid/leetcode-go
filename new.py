@@ -18,7 +18,7 @@ def main(title, tags):
 def create_directory_with_given_name(name: str, tags: List[str]):
     import os
 
-    dir_name = problem_name_to_dir_name(name)
+    dir_name = os.path.join('leetcode', problem_name_to_dir_name(name))
     os.mkdir(dir_name)
 
     # create a markdown file with the same name inside the directory
