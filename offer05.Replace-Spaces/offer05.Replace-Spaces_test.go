@@ -1,6 +1,7 @@
 package main
 
 import "testing"
+import "github.com/stretchr/testify/assert"
 
 type question struct {
 	param
@@ -39,9 +40,6 @@ func TestOffer5(t *testing.T) {
 		},
 	}
 	for _, q := range questions {
-		ret := replaceSpace(q.param.one)
-		if ret != q.ret.one {
-			t.Errorf("want: %v, got: %v", q.ret.one, ret)
-		}
+		assert.Equal(t, q.ret.one, replaceSpace(q.param.one))
 	}
 }
