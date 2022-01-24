@@ -1,11 +1,12 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
-func Test(t *testing.T) {
+func Test344(t *testing.T) {
 	s := []byte("abc")
 	reverseString(s)
-
 	if string(s) != "cba" {
 		t.Error("wrong")
 	}

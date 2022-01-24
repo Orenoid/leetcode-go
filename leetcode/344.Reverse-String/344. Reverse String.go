@@ -13,7 +13,7 @@ func reverseString(s []byte) {
 }
 
 func main() {
-	s := []byte("")
+	s := []byte("abcdefg")
 	reverseString(s)
 	fmt.Println(string(s))
 }
