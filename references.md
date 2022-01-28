@@ -16,3 +16,7 @@ https://zhuanlan.zhihu.com/p/349940945
 - https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html#%E6%80%9D%E8%B7%AF
 
 哈希  
+
+
+栈与队列  
+- https://programmercarl.com/0020.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.html#_20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7
