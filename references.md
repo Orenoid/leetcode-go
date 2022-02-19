@@ -21,3 +21,6 @@ https://github.com/resumejob/Leetcode-retag
 
 栈与队列  
 - https://programmercarl.com/0020.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.html#_20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7
+
+动态规划
+- https://programmercarl.com/0474.%E4%B8%80%E5%92%8C%E9%9B%B6.html#_474-%E4%B8%80%E5%92%8C%E9%9B%B6
