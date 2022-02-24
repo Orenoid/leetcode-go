@@ -24,3 +24,6 @@ https://github.com/resumejob/Leetcode-retag
 
 动态规划
 - https://programmercarl.com/0474.%E4%B8%80%E5%92%8C%E9%9B%B6.html#_474-%E4%B8%80%E5%92%8C%E9%9B%B6
+
+## 其他
+[如何学好动态规划](https://zhuanlan.zhihu.com/p/78220312)
