@@ -15,3 +15,12 @@
 
 ## 0-1 背包
 > 416. Partition Equal Subset Sum
+
+## 容易弄混的几道题
+### 子串问题
+> 3. Longest Substring Without Repeating Characters
+> 76. Minimum Window Substring
+
+### 滑动窗口
+> 239. Sliding Window Maximum
+> 209. Minimum Size Subarray Sum
