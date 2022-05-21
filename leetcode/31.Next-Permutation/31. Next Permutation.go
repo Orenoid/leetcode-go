@@ -1,23 +1,40 @@
 package main
 
+import "fmt"
+
 func nextPermutation(nums []int) {
-	n := len(nums)
-	i := n - 2
-	for i >= 0 && nums[i] >= nums[i+1] {
-		i--
+	if len(nums) <= 1 {
+		return
 	}
-	if i >= 0 {
-		j := n - 1
-		for j >= 0 && nums[i] >= nums[j] {
-			j--
-		}
-		nums[i], nums[j] = nums[j], nums[i]
+	// 从后往前找到第一个降序的数字
+	left := len(nums) - 2
+	for left >= 0 && nums[left] >= nums[left+1] {
+		left--
 	}
-	reverse(nums[i+1:])
+	if left == -1 {
+		reverse(nums)
+		return
+	}
+	// 从后往前找到第一个比 nums[left] 更大的数字
+	right := len(nums) - 1
+	for nums[right] <= nums[left] {
+		right--
+	}
+	nums[left], nums[right] = nums[right], nums[left]
+	reverse(nums[left+1:])
 }
 
-func reverse(a []int) {
-	for i, n := 0, len(a); i < n/2; i++ {
-		a[i], a[n-1-i] = a[n-1-i], a[i]
+func reverse(nums []int) {
+	left, right := 0, len(nums)-1
+	for left <= right {
+		nums[left], nums[right] = nums[right], nums[left]
+		left++
+		right--
 	}
+}
+
+func main() {
+	nums := []int{1, 2, 3}
+	nextPermutation(nums)
+	fmt.Println(nums)
 }
