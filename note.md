@@ -116,10 +116,10 @@ class Solution:
 
 题解参考：https://leetcode-cn.com/problems/daily-temperatures/solution/leetcode-tu-jie-739mei-ri-wen-du-by-misterbooo/
 
-### 198. 打家劫舍
+### 198. 打家劫舍 ✅
 动态规划 dp[i] = max(dp[i-2]+nums[i], dp[i-1])
 
-### 64. 最小路径和
+### 64. 最小路径和 ✅
 动态规划，使用二维数组存储到达每个格子的最小路径和即可
 
 ### 49. 字母异位词分组
