@@ -3,43 +3,37 @@ package main
 import "fmt"
 
 func exist(board [][]byte, word string) bool {
-
-	used := make([][]bool, len(board))
-	for i := range used {
-		used[i] = make([]bool, len(board[0]))
-	}
 	found := false
-	var backTrack func(i, j int, track []byte)
-	backTrack = func(i, j int, track []byte) {
-		if found || i < 0 || j < 0 || i >= len(board) || j >= len(board[0]) || used[i][j] {
+	usedFlags := make([][]bool, len(board))
+	for i := range usedFlags {
+		usedFlags[i] = make([]bool, len(board[0]))
+	}
+
+	var backTrack func(i, j, idx int)
+	backTrack = func(i, j, idx int) {
+		if i < 0 || j < 0 || i > len(board)-1 || j > len(board[0])-1 ||
+			idx > len(word)-1 || usedFlags[i][j] || board[i][j] != word[idx] || found {
 			return
 		}
-		if word[len(track)] != board[i][j] {
-			return
-		}
-		track = append(track, board[i][j])
-		used[i][j] = true
-		if len(track) == len(word) {
+		usedFlags[i][j] = true
+		if idx == len(word)-1 {
 			found = true
 		} else {
-			backTrack(i-1, j, track)
-			backTrack(i, j-1, track)
-			backTrack(i+1, j, track)
-			backTrack(i, j+1, track)
+			backTrack(i-1, j, idx+1)
+			backTrack(i, j-1, idx+1)
+			backTrack(i+1, j, idx+1)
+			backTrack(i, j+1, idx+1)
 		}
-		track = track[:len(track)-1]
-		used[i][j] = false
+		usedFlags[i][j] = false
 	}
-	for i := range board {
-		for j := range board[0] {
-			if !found && board[i][j] == word[0] {
-				backTrack(i, j, nil)
-			}
+	for i := 0; i < len(board); i++ {
+		for j := 0; j < len(board[0]); j++ {
+			backTrack(i, j, 0)
 		}
 	}
 	return found
 }
 
 func main() {
-	fmt.Println(exist([][]byte{{'a', 'b'}, {'c', 'd'}}, "bca"))
+	fmt.Println(exist([][]byte{{'a', 'b'}, {'c', 'd'}}, "bdc"))
 }
